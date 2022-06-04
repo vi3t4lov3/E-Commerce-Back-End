@@ -30,7 +30,7 @@ router.get('/:id', (req, res) => {
     .then((results) => {
       if (!results) {
         res.status(404).json({
-          message: `No results found with ID ${req.params.id} found. Please try again with a different ID.`,
+          message: `The tags with ID ${req.params.id} not found.`,
         });
         return;
       }
@@ -58,7 +58,8 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
   // update a tag's name by its `id` value
-  Tag.update(req.body, {
+  Tag.update(
+    {tag_name: req.body.tag_name}, {
     where: {
       id: req.params.id,
     },
@@ -66,11 +67,11 @@ router.put('/:id', (req, res) => {
     .then((results) => {
       if (!results[0]) {
         res.status(404).json({
-          message: `No results found with ID ${req.params.id} found. Please try again with a different ID.`,
+          message: `The tags with ID ${req.params.id} not found.`,
         });
         return;
       }
-      res.json(results);
+      res.json({ message: `${results} : The tag ID ${req.params.id} had updated to new ${req.body.tag_name}`});
     })
     .catch((err) => {
       console.log(err);
@@ -88,11 +89,11 @@ router.delete('/:id', (req, res) => {
     .then((results) => {
       if (!results) {
         res.status(404).json({
-          message: `No results found with ID ${req.params.id} found. Please try again with a different ID.`,
+          message: `The tags with ID ${req.params.id} not found.`,
         });
         return;
       }
-      res.json(results);
+      res.json({message: `${results} - The tags with ID ${req.params.id} had been deleted`});
     })
     .catch((err) => {
       console.log(err);
