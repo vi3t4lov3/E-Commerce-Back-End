@@ -74,7 +74,7 @@ router.put('/:id', (req, res) => {
       res.status(404).json({message: `No category  with ID ${req.params.id} found`});
       return;
     }
-    res.json(results);
+    res.json({ message: `${results} : The category ID ${req.params.id} had updated to new ${req.body.category_name}`});
   }).catch((err)=> {
     console.log(err);
     res.status(500).json(err)
@@ -92,7 +92,7 @@ router.delete('/:id', (req, res) => {
       res.status(404).json({message: `No category  with ID ${req.params.id} found`});
       return;
     }
-    res.json(results);
+    res.json({message: `${results} - The category with ID ${req.params.id} had been deleted`});
   }).catch((err) =>{
     console.log(err);
     res.status(500).json(err)
