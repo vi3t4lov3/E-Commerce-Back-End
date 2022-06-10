@@ -1,4 +1,5 @@
 # E-Commerce-Back-End
+Repo: https://github.com/vi3t4lov3/E-Commerce-Back-End
 ## Description
 Developers build the back end for an e-commerce site by modifying starter code. You’ll configure a working Express.js API to use Sequelize to interact with a MySQL database.
 
@@ -65,9 +66,9 @@ NO TEST THIS TIME
 ```
 
 ## Demo
-![imagename](./assets/img/demo.gif)
+![imagename](./Assets/hw14.gif)
 
-[Click here] (https://www.youtube.com/watch?v=UIhtvwJXsDs) 
+[Click here] (https://www.youtube.com/watch?v=929Bt5nxw5s) 
 
 ## Questions
 
